@@ -1,0 +1,225 @@
+:root {
+  --bg: #f3f6fa;
+  --card: #ffffff;
+  --text: #1c1e21;
+  --muted: #6b7280;
+  --accent: #0e2a47;     /* Azul petróleo */
+  --accent-2: #29a0b1;   /* Azul celeste moderno */
+  --radius: 14px;
+  --shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+  --max-width: 1100px;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* General */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.section {
+  padding: 80px 0;
+}
+.section.alt {
+  background: #f9fbfd;
+}
+.section-title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: var(--accent);
+  border-left: 5px solid var(--accent-2);
+  padding-left: 10px;
+}
+
+/* Hero */
+.hero {
+  padding: 90px 0;
+  background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #fff;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 2.4rem;
+  margin: 0;
+}
+.subtitle {
+  font-weight: 500;
+  color: #cfe8ef;
+  margin: 10px 0;
+}
+.brief {
+  max-width: 520px;
+  color: #e4eef3;
+}
+.btn {
+  background: var(--accent-2);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 8px;
+  transition: 0.25s;
+}
+.btn:hover {
+  background: #22b7ca;
+}
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/* Foto de perfil */
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  display: block;
+  margin: 0 auto 15px;
+}
+
+/* Contact quick */
+.contact-quick {
+  list-style: none;
+  padding: 0;
+  color: #e9f2f4;
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+/* Cards */
+.card-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border: 1px solid #e5e7eb;
+}
+
+/* Timeline */
+.timeline {
+  display: grid;
+  gap: 22px;
+}
+.timeline-item {
+  background: var(--card);
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--accent-2);
+}
+.timeline-item h4 {
+  margin-top: 0;
+  color: var(--accent);
+}
+.reference {
+  margin-top: 8px;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.skill {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.skill h5 {
+  margin-top: 0;
+  color: var(--accent-2);
+}
+
+/* Contact */
+.contact-links ul {
+  list-style: none;
+  padding: 0;
+}
+.contact-links li {
+  margin-bottom: 10px;
+}
+.contact-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Animaciones */
+.reveal {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .section {
+    padding: 60px 0;
+  }
+}
+/* Foto de perfil */
+.profile-photo {
+  width: 180px;                /* tamaño base un poco mayor */
+  height: 180px;
+  object-fit: cover;           /* recorta sin deformar */
+  object-position: center;     /* centra el rostro */
+  border-radius: 50%;          /* redonda perfecta */
+  border: 5px solid #fff;      /* borde limpio y profesional */
+  box-shadow: 0 6px 18px rgba(14, 42, 71, 0.25); /* sombra más sutil y profunda */
+  display: block;
+  margin: 0 auto 20px;         /* centrada con margen inferior */
+  background-color: #fff;      /* fondo blanco para evitar bordes grises */
+  aspect-ratio: 1 / 1;         /* mantiene proporción cuadrada en navegadores modernos */
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.03);      /* efecto suave al pasar el mouse */
+}
