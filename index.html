@@ -3,49 +3,153 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Migel Esteban Martínez V. — Hoja de vida (ADSO)</title>
+  <title>Miguel Esteban Martínez Varón — Aprendiz SENA ADSO</title>
+
+  <!-- Esto es lo que se ve cuando el enlace se comparte por WhatsApp o se pega
+       en un correo. Para quien recibe la postulación, es la primera impresión. -->
+  <meta name="description" content="Aprendiz SENA de Análisis y Desarrollo de Software. Construí el sistema de nómina y asistencia de Isla Azul: 4 sedes, ~40 empleados, en producción. Busco empresa patrocinadora.">
+  <meta property="og:title" content="Miguel Esteban Martínez Varón — Aprendiz SENA ADSO">
+  <meta property="og:description" content="Sistema de nómina y asistencia en producción para 4 sedes y ~40 empleados. Busco empresa patrocinadora para mi contrato de aprendizaje.">
+  <meta property="og:type" content="profile">
+  <meta name="theme-color" content="#0e2a47">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Marca que el JavaScript sí corre. Si está bloqueado (redes
+       corporativas) o falla, la clase nunca se añade y el contenido se ve
+       igual: la animación es un adorno, no un requisito para leer. -->
+  <script>document.documentElement.classList.add("js-anim");</script>
 </head>
 
 <body>
   <header class="hero">
     <div class="container hero-grid">
       <div class="hero-text">
-        <h1 class="reveal">Migel Esteban <span class="accent">Martínez Varon</span></h1>
-        <p class="subtitle reveal delay-1">Estudiante de ADSO — Desarrollador en formación</p>
+        <p class="eyebrow reveal">Busco empresa patrocinadora · Contrato de aprendizaje SENA</p>
+        <h1 class="reveal">Miguel Esteban <span class="accent">Martínez Varón</span></h1>
+        <p class="subtitle reveal delay-1">Aprendiz SENA — Análisis y Desarrollo de Software (ADSO)</p>
         <p class="brief reveal delay-2">
-          Responsable y proactivo, con experiencia en atención al cliente, manejo de caja y apoyo operativo.
-          Actualmente estudio Análisis y Desarrollo de Software (ADSO) SENA y también Ingeniería de Sistemas.
+          Construí y mantengo el sistema de nómina y asistencia de <strong>Isla Azul</strong>:
+          cuatro sedes, cerca de 40 empleados, funcionando en producción.
+          Estudio ADSO en el SENA e Ingeniería de Sistemas en la Universidad Distrital.
         </p>
         <div class="hero-cta reveal delay-3">
-          <a href="#contact" class="btn">Contactar</a>
-          <a href="#proyectos" class="btn ghost">Ver experiencia</a>
+          <a href="#proyectos" class="btn">Ver lo que he construido</a>
+          <a href="mailto:miguelmartinezvaron32143@gmail.com" class="btn ghost">Escribirme</a>
         </div>
       </div>
 
       <div class="hero-avatar reveal delay-2">
-        <img src="foto-perfil.jpg" alt="Foto de perfil de Miguel Esteban Martínez Varon" class="profile-photo">
+        <img src="foto-perfil.jpg" alt="Fotografía de Miguel Esteban Martínez Varón" class="profile-photo">
         <ul class="contact-quick">
-          <li><strong>Ubicación:</strong> Mosquera, Cundinamarca</li>
-          <li><strong>Tel:</strong> 321 940 4978</li>
-          <li><strong>Email:</strong  miguelmartinezvaron32143@gmail.com</li>
+          <li><strong>Ubicación</strong> <span>Mosquera, Cundinamarca</span></li>
+          <li><strong>Teléfono</strong> <a href="tel:+573219404978">321 940 4978</a></li>
+          <li><strong>Email</strong> <a href="mailto:miguelmartinezvaron32143@gmail.com">miguelmartinezvaron32143@gmail.com</a></li>
+          <li><strong>GitHub</strong> <a href="https://github.com/MiguelMartinez32143" target="_blank" rel="noopener">MiguelMartinez32143</a></li>
         </ul>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Sobre mí -->
-    <section id="sobre-mi" class="section">
+    <!-- Ficha rápida: los datos exactos que Recursos Humanos necesita para
+         abrir la solicitud y legalizar el contrato, sin tener que buscarlos. -->
+    <section id="ficha" class="section ficha-seccion">
       <div class="container">
-        <h2 class="section-title reveal">Sobre mí</h2>
-        <p class="reveal delay-1">
-          Soy una persona responsable, comprometida y con actitud proactiva.
-          Me destaco por la capacidad de trabajar en equipo y la disposición para aprender continuamente.
-          Actualmente estudio la tecnología en Análisis y Desarrollo de Software (ADSO) y la Ingeniería de Sistemas,
-          fortaleciendo habilidades en análisis, organización y resolución de problemas.
-        </p>
+        <h2 class="section-title reveal">Datos para el contrato de aprendizaje</h2>
+        <dl class="ficha reveal delay-1">
+          <div><dt>Programa</dt><dd>Tecnología en Análisis y Desarrollo de Software (ADSO)</dd></div>
+          <div><dt>Institución</dt><dd>SENA</dd></div>
+          <div><dt>Ficha</dt><dd>3293664</dd></div>
+          <div><dt>Etapa lectiva</dt><dd>Hasta el 28/04/2027</dd></div>
+          <div><dt>Etapa productiva</dt><dd>29/04/2027 — 27/10/2027</dd></div>
+          <div><dt>Estado en el SGVA</dt><dd>Ficha activa · documentación al día</dd></div>
+          <div><dt>Residencia</dt><dd>Mosquera, Cundinamarca</dd></div>
+          <div><dt>Zona de trabajo</dt><dd>Bogotá y Sabana Occidente</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Proyectos: la evidencia. Va antes que todo lo demás a propósito. -->
+    <section id="proyectos" class="section alt">
+      <div class="container">
+        <h2 class="section-title reveal">Lo que he construido</h2>
+
+        <article class="card destacado reveal delay-1">
+          <div class="card-head">
+            <h3>Isla Azul — Personal, Asistencia y Nómina</h3>
+            <span class="badge">En producción</span>
+          </div>
+          <p class="muted small">4 sedes · ~40 empleados · uso diario</p>
+          <p>
+            El restaurante calculaba la nómina a mano sobre planillas. Construí el sistema
+            que la calcula sola: un terminal registra las llegadas y salidas del personal en
+            cada sede, y a partir de esos marcajes se liquida la nómina, se generan los
+            desprendibles de pago y los reportes de asistencia. Los datos viven en
+            PostgreSQL sobre Supabase, y la aplicación está desplegada en Vercel.
+          </p>
+          <ul>
+            <li>Registro de entrada y salida desde un terminal en cada sede.</li>
+            <li>Liquidación de nómina calculada sobre los marcajes, sin digitación manual.</li>
+            <li>Desprendibles de pago y reportes por empleado y por sede.</li>
+            <li>Administración del personal de las cuatro sedes en un solo lugar.</li>
+          </ul>
+          <ul class="tags">
+            <li>React</li>
+            <li>Vite</li>
+            <li>JavaScript</li>
+            <li>PostgreSQL</li>
+            <li>Supabase</li>
+            <li>Vercel</li>
+          </ul>
+          <p class="card-links">
+            <a href="https://isla-azul-sistema.vercel.app" target="_blank" rel="noopener">Ver el sistema funcionando →</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experiencia -->
+    <section id="experiencia" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Experiencia laboral</h2>
+
+        <div class="timeline">
+          <div class="timeline-item reveal delay-1">
+            <h4>ISLA AZUL — Auxiliar administrativo y sistemas internos</h4>
+            <p class="muted small">02/2026 — Actualidad · aprox. 6 meses · Mosquera, Cundinamarca</p>
+            <ul>
+              <li>Apoyo en la administración de un restaurante con cuatro sedes y cerca de 40 empleados.</li>
+              <li>Desarrollo y mantenimiento del sistema interno de personal, asistencia y nómina.</li>
+              <li>Automatización del cálculo de nómina, que antes se hacía a mano sobre planillas.</li>
+              <li>Digitalización del inventario, hasta entonces llevado en papel.</li>
+              <li>Reportes de asistencia y desprendibles de pago para las cuatro sedes.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item reveal delay-2">
+            <h4>ISLA AZUL — Auxiliar de ventas y servicio al cliente</h4>
+            <p class="muted small">15/02/2024 — 02/2026 · 2 años · Mosquera, Cundinamarca</p>
+            <ul>
+              <li>Cumplimiento de indicadores de eficiencia y calidad en atención al cliente.</li>
+              <li>Gestión de cobros, devoluciones y manejo de caja sin inconsistencias.</li>
+              <li>Aportes en la optimización de procesos operativos del punto de venta.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item reveal delay-3">
+            <h4>HOLDING S.A.S — Auxiliar de cargue y descargue</h4>
+            <p class="muted small">20/09/2023 — 20/09/2024 · Mosquera, Cundinamarca</p>
+            <ul>
+              <li>Cargue y descargue de mercancía cumpliendo normas de seguridad y tiempos de entrega.</li>
+              <li>Control de inventario y verificación de calidad en despacho y recepción.</li>
+              <li>Organización del área logística para mejorar distribución y almacenamiento.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="muted small nota reveal">Referencias laborales disponibles a solicitud.</p>
       </div>
     </section>
 
@@ -56,70 +160,48 @@
 
         <div class="card-grid">
           <article class="card reveal delay-1">
-            <h3>SENA — Contabilización de operaciones comerciales y financieras</h3>
-            <p class="muted">Graduado • Colombia</p>
-            <p class="muted small">Último periodo cursado: 20/11/2023</p>
+            <h3>Análisis y Desarrollo de Software</h3>
+            <p class="muted">Tecnología · SENA — en curso</p>
+            <p class="muted small">Ficha 3293664 · lectiva hasta 28/04/2027</p>
           </article>
 
           <article class="card reveal delay-2">
-            <h3>Estudios actuales</h3>
-            <p class="muted">Tecnología en Análisis y Desarrollo de Software (ADSO) SENA</p>
-            <p class="muted">Ingeniería de Sistemas — Universidad Distrital Francisco José de Caldas</p>
+            <h3>Ingeniería de Sistemas</h3>
+            <p class="muted">Universidad Distrital Francisco José de Caldas — en curso</p>
+            <p class="muted small">Cursada en paralelo con la tecnología del SENA</p>
           </article>
-        </div>
-      </div>
-    </section>
 
-    <!-- Experiencia -->
-    <section id="proyectos" class="section">
-      <div class="container">
-        <h2 class="section-title reveal">Experiencia laboral</h2>
-
-        <div class="timeline">
-          <div class="timeline-item reveal delay-1">
-            <h4>ISLA AZUL — Auxiliar servicio al cliente</h4>
-            <p class="muted small">15/02/2024 — 01/09/2025 • Mosquera, Cundinamarca</p>
-            <ul>
-              <li>Cumplimiento de indicadores de eficiencia y calidad en atención al cliente.</li>
-              <li>Gestión de cobros, devoluciones y manejo de caja sin inconsistencias.</li>
-              <li>Aportes en optimización de procesos operativos y fortalecimiento del trabajo en equipo.</li>
-            </ul>
-            <p class="reference"><strong>Referencia:</strong> Isla Azul — Magda Esperanza Guzmán (Jefe Directo) | Tel: 315 570 4204</p>
-          </div>
-
-          <div class="timeline-item reveal delay-2">
-            <h4>HOLDING S.A.S — Auxiliar de cargue y descargue</h4>
-            <p class="muted small">20/09/2023 — 20/09/2024 • Mosquera, Cundinamarca</p>
-            <ul>
-              <li>Realicé labores de cargue y descargue de mercancía asegurando el cumplimiento de normas de seguridad y tiempos de entrega.</li>
-              <li>Efectué control de inventario y verificación de calidad en los procesos de despacho y recepción.</li>
-              <li>Colaboré en la organización del área logística, mejorando la eficiencia en la distribución y almacenamiento de productos.</li>
-            </ul>
-            <p class="reference"><strong>Referencia:</strong> Holding S.A.S — Samir (Jefe Directo) | Tel: 313 564 7050</p>
-          </div>
+          <article class="card reveal delay-3">
+            <h3>Contabilización de operaciones comerciales y financieras</h3>
+            <p class="muted">SENA — graduado</p>
+            <p class="muted small">Finalizado el 20/11/2023</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Habilidades -->
-    <section id="habilidades" class="section alt">
+    <section id="habilidades" class="section">
       <div class="container">
         <h2 class="section-title reveal">Habilidades</h2>
         <div class="skills-grid">
           <div class="skill reveal delay-1">
-            <h5>Técnicas</h5>
+            <h5>Desarrollo</h5>
             <ul>
-              <li>Análisis y Desarrollo de Software</li>
-              <li>Fundamentos de Ingeniería de Sistemas</li>
-              <li>Manejo operativo y control de caja</li>
+              <li>Java · Spring Boot</li>
+              <li>JavaScript · React</li>
+              <li>Python</li>
+              <li>SQL · PostgreSQL · Supabase</li>
+              <li>Git y GitHub</li>
             </ul>
           </div>
           <div class="skill reveal delay-2">
-            <h5>Blandas</h5>
+            <h5>Del oficio</h5>
             <ul>
-              <li>Atención al cliente</li>
-              <li>Trabajo en equipo</li>
-              <li>Proactividad y aprendizaje continuo</li>
+              <li>Software en producción con usuarios reales</li>
+              <li>Levantamiento de requisitos con personal no técnico</li>
+              <li>Nómina, control de asistencia y reportes</li>
+              <li>Atención al cliente y trabajo en equipo</li>
             </ul>
           </div>
         </div>
@@ -127,14 +209,16 @@
     </section>
 
     <!-- Contacto -->
-    <section id="contact" class="section">
+    <section id="contact" class="section alt">
       <div class="container">
         <h2 class="section-title reveal">Contacto</h2>
         <div class="contact-links reveal delay-1">
-          <p>Puedes contactarme directamente a través de los siguientes medios:</p>
+          <p>Busco empresa que me patrocine el contrato de aprendizaje. Puede escribirme por cualquiera de estos medios:</p>
           <ul>
-            <li><strong>Email:</strong> miguelmartinezvaron32143@gmail.com</li>
-            <li><strong>Teléfono:</strong> 321 940 4978</li>
+            <li><strong>Email</strong> <a href="mailto:miguelmartinezvaron32143@gmail.com">miguelmartinezvaron32143@gmail.com</a></li>
+            <li><strong>WhatsApp</strong> <a href="https://wa.me/573219404978" target="_blank" rel="noopener">321 940 4978</a></li>
+            <li><strong>GitHub</strong> <a href="https://github.com/MiguelMartinez32143" target="_blank" rel="noopener">github.com/MiguelMartinez32143</a></li>
+            <li><strong>Ubicación</strong> <span>Mosquera, Cundinamarca — Bogotá y Sabana Occidente</span></li>
           </ul>
         </div>
       </div>
@@ -143,12 +227,10 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© 2025 — Miguel Esteban Martínez Varon</p>
+      <p>© 2026 — Miguel Esteban Martínez Varón · Aprendiz SENA ADSO</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-

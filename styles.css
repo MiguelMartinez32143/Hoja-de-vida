@@ -181,14 +181,24 @@ body {
 }
 
 /* Animaciones */
-.reveal {
+/* La animación solo se aplica si el JavaScript pudo marcar el documento.
+   Antes esto era `.reveal { opacity: 0 }` a secas, y con el JS bloqueado o al
+   imprimir la página salía en blanco. */
+.js-anim .reveal {
   opacity: 0;
   transform: translateY(15px);
   transition: all 0.6s ease-out;
 }
-.reveal.visible {
+.js-anim .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-anim .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
@@ -222,4 +232,160 @@ body {
 
 .profile-photo:hover {
   transform: scale(1.03);      /* efecto suave al pasar el mouse */
+}
+
+/* ==========================================================================
+   Añadidos pensados para quien lee esto en Recursos Humanos:
+   una ficha de datos copiable, evidencia destacada y una versión imprimible.
+   ========================================================================== */
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+.muted { color: var(--muted); }
+.small { font-size: 0.88rem; }
+.nota { margin-top: 18px; font-style: italic; }
+
+/* Enlaces de contacto: en el móvil se tocan, no se copian a mano */
+.contact-quick { list-style: none; padding: 0; margin: 14px 0 0; }
+.contact-quick li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 7px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+}
+.contact-quick li:last-child { border-bottom: 0; }
+.contact-quick strong {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.contact-quick a { color: var(--accent); text-decoration: none; word-break: break-word; }
+.contact-quick a:hover { text-decoration: underline; }
+
+/* Ficha de datos del contrato: lo que RR. HH. necesita transcribir */
+.ficha-seccion { padding-top: 50px; padding-bottom: 50px; }
+.ficha {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0;
+  margin: 0;
+  background: var(--card);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.ficha > div {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eef1f5;
+  border-right: 1px solid #eef1f5;
+}
+.ficha dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.ficha dd { margin: 0; font-weight: 500; }
+
+/* Proyecto destacado */
+.card.destacado { border-left: 4px solid var(--accent-2); }
+.card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.card-head h3 { margin: 0; }
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(41, 160, 177, 0.12);
+  color: #10717e;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.tags li {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #eef3f8;
+  border: 1px solid #dde5ee;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+.card-links { margin: 16px 0 0; }
+.card-links a {
+  color: var(--accent-2);
+  font-weight: 600;
+  text-decoration: none;
+}
+.card-links a:hover { text-decoration: underline; }
+
+.contact-links ul { list-style: none; padding: 0; }
+.contact-links li { padding: 8px 0; border-bottom: 1px solid #e5e7eb; }
+.contact-links li:last-child { border-bottom: 0; }
+.contact-links strong {
+  display: inline-block;
+  min-width: 120px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.contact-links a { color: var(--accent); }
+
+/* --------------------------------------------------------------------------
+   Impresión. RR. HH. guarda las hojas de vida en PDF para adjuntarlas al
+   expediente del candidato: Ctrl+P tiene que dar un documento legible, con
+   los enlaces escritos porque en papel no se puede hacer clic.
+   -------------------------------------------------------------------------- */
+@media print {
+  .js-anim .reveal,
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  body { background: #fff; color: #000; }
+  .hero, .section { padding: 18px 0; }
+  .section.alt, .hero { background: #fff; }
+  .container { width: 100%; padding: 10px 0; }
+  .hero-cta, .btn { display: none; }
+  .card, .ficha { box-shadow: none; break-inside: avoid; }
+  .timeline-item, .card, .skill { break-inside: avoid; }
+  .section-title { break-after: avoid; }
+  /* En papel un enlace sin su dirección no sirve de nada */
+  .card-links a::after,
+  .contact-links a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    font-weight: 400;
+    word-break: break-all;
+  }
 }
