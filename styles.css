@@ -381,16 +381,53 @@ body {
   .section.alt, .hero { background: #fff; }
 
   /* Cabecera: el degradado se come el tóner y el texto blanco no se ve */
-  .hero { padding: 0 0 8px; color: #000; border-bottom: 2px solid var(--accent); }
-  .hero-grid { grid-template-columns: 1fr 150px; gap: 18px; align-items: flex-start; }
-  .hero h1 { font-size: 1.7rem; }
-  .subtitle { color: var(--accent); margin: 3px 0; font-size: 1rem; }
-  .brief { max-width: none; margin: 6px 0 0; }
-  .eyebrow { margin-bottom: 2px; }
-  .profile-photo { width: 92px; height: 92px; border-width: 2px; box-shadow: none; }
-  .contact-quick { margin-top: 8px; }
-  .contact-quick li { padding: 3px 0; font-size: 0.82rem; }
+  .hero { padding: 0 0 10px; color: #000; border-bottom: 2px solid var(--accent); }
+  .hero h1 { font-size: 1.75rem; line-height: 1.15; }
+  .subtitle { color: var(--accent); margin: 2px 0 0; font-size: 1rem; font-weight: 600; }
+  .brief { max-width: none; margin: 5px 0 0; }
+  .eyebrow { margin-bottom: 3px; }
   .hero-cta, .btn { display: none; }
+
+  /* La foto y los datos de contacto cuelgan ambos de .hero-avatar. Con
+     display:contents ese contenedor desaparece de la maquetación y sus hijos
+     pasan a ser celdas de la rejilla: así el contacto puede ocupar una franja
+     a todo lo ancho en vez de quedar apretado en una columna de 150 px, donde
+     el correo se partía en tres líneas. */
+  .hero-avatar { display: contents; }
+  .hero-grid {
+    grid-template-columns: 1fr 86px;
+    grid-template-rows: auto auto;
+    gap: 0 18px;
+    align-items: start;
+  }
+  .hero-text { grid-column: 1; grid-row: 1; }
+  .profile-photo {
+    grid-column: 2;
+    grid-row: 1;
+    width: 86px;
+    height: 86px;
+    border-width: 2px;
+    box-shadow: none;
+  }
+  .contact-quick {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 16px;
+    margin: 9px 0 0;
+    padding-top: 7px;
+    border-top: 1px solid #dfe5ec;
+  }
+  .contact-quick li {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 5px;
+    padding: 0;
+    border: 0;
+    font-size: 0.82rem;
+  }
+  .contact-quick strong { font-size: 0.66rem; }
 
   .section-title { font-size: 1rem; margin-bottom: 7px; break-after: avoid; }
   h3, h4 { font-size: 1rem; margin: 0 0 2px; }
