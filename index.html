@@ -2,7 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- viewport-fit=cover: en teléfonos con muesca o bordes curvos la página
+       usa toda la pantalla, y el CSS aparta el contenido del recorte. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Miguel Esteban Martínez Varón — Aprendiz SENA ADSO</title>
 
   <!-- Esto es lo que se ve cuando el enlace se comparte por WhatsApp o se pega
@@ -44,15 +46,21 @@
         </div>
       </div>
 
-      <div class="hero-avatar reveal delay-2">
-        <img src="foto-perfil.jpg" alt="Fotografía de Miguel Esteban Martínez Varón" class="profile-photo">
-        <ul class="contact-quick">
-          <li><strong>Ubicación</strong> <span>Mosquera, Cundinamarca</span></li>
-          <li><strong>Teléfono</strong> <a href="tel:+573219404978">321 940 4978</a></li>
-          <li><strong>Email</strong> <a href="mailto:miguelmartinezvaron32143@gmail.com">miguelmartinezvaron32143@gmail.com</a></li>
-          <li><strong>GitHub</strong> <a href="https://github.com/MiguelMartinez32143" target="_blank" rel="noopener">MiguelMartinez32143</a></li>
-        </ul>
+      <!-- La foto y el contacto son hermanos del texto, no un bloque aparte:
+           así el CSS los recoloca por pantalla (en el móvil la foto encabeza
+           y el contacto cierra; al imprimir, el contacto ocupa una franja a
+           todo lo ancho) sin cambiar este marcado. -->
+      <div class="hero-media reveal delay-2">
+        <img src="foto-perfil.jpg" alt="Fotografía de Miguel Esteban Martínez Varón"
+             class="profile-photo" width="1200" height="1200" decoding="async">
       </div>
+
+      <ul class="contact-quick reveal delay-3">
+        <li><strong>Ubicación</strong> <span>Mosquera, Cundinamarca</span></li>
+        <li><strong>Teléfono</strong> <a href="tel:+573219404978">321 940 4978</a></li>
+        <li><strong>Email</strong> <a href="mailto:miguelmartinezvaron32143@gmail.com">miguelmartinezvaron32143@<wbr>gmail.com</a></li>
+        <li><strong>GitHub</strong> <a href="https://github.com/MiguelMartinez32143" target="_blank" rel="noopener">MiguelMartinez32143</a></li>
+      </ul>
     </div>
   </header>
 
@@ -122,7 +130,7 @@
         <div class="timeline">
           <div class="timeline-item reveal delay-1">
             <h4>ISLA AZUL — Auxiliar administrativo y sistemas internos</h4>
-            <p class="muted small">02/2026 — Actualidad · aprox. 6 meses · Mosquera, Cundinamarca</p>
+            <p class="muted small">02/2026 — Actualidad · 6 meses · Mosquera, Cundinamarca</p>
             <ul>
               <li>Apoyo en la administración de un restaurante con cuatro sedes y cerca de 40 empleados.</li>
               <li>Desarrollo y mantenimiento del sistema interno de personal, asistencia y nómina.</li>
@@ -134,7 +142,7 @@
 
           <div class="timeline-item reveal delay-2">
             <h4>ISLA AZUL — Auxiliar de ventas y servicio al cliente</h4>
-            <p class="muted small">15/02/2024 — 02/2026 · 2 años · Mosquera, Cundinamarca</p>
+            <p class="muted small">02/2024 — 02/2026 · 2 años · Mosquera, Cundinamarca</p>
             <ul>
               <li>Cumplimiento de indicadores de eficiencia y calidad en atención al cliente.</li>
               <li>Gestión de cobros, devoluciones y manejo de caja sin inconsistencias.</li>
@@ -144,7 +152,7 @@
 
           <div class="timeline-item reveal delay-3">
             <h4>HOLDING S.A.S — Auxiliar de cargue y descargue</h4>
-            <p class="muted small">20/09/2023 — 20/09/2024 · Mosquera, Cundinamarca</p>
+            <p class="muted small">09/2023 — 02/2024 · Mosquera, Cundinamarca</p>
             <ul>
               <li>Cargue y descargue de mercancía cumpliendo normas de seguridad y tiempos de entrega.</li>
               <li>Control de inventario y verificación de calidad en despacho y recepción.</li>
@@ -208,6 +216,13 @@
               <li>Atención al cliente y trabajo en equipo</li>
             </ul>
           </div>
+          <div class="skill reveal delay-3">
+            <h5>Idiomas</h5>
+            <ul>
+              <li>Español — nativo</li>
+              <li>Inglés — B1 (intermedio)</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -219,7 +234,7 @@
         <div class="contact-links reveal delay-1">
           <p>Busco empresa que me patrocine el contrato de aprendizaje. Puede escribirme por cualquiera de estos medios:</p>
           <ul>
-            <li><strong>Email</strong> <a href="mailto:miguelmartinezvaron32143@gmail.com">miguelmartinezvaron32143@gmail.com</a></li>
+            <li><strong>Email</strong> <a href="mailto:miguelmartinezvaron32143@gmail.com">miguelmartinezvaron32143@<wbr>gmail.com</a></li>
             <li><strong>WhatsApp</strong> <a href="https://wa.me/573219404978" target="_blank" rel="noopener">321 940 4978</a></li>
             <li><strong>GitHub</strong> <a href="https://github.com/MiguelMartinez32143" target="_blank" rel="noopener">github.com/MiguelMartinez32143</a></li>
             <li><strong>Ubicación</strong> <span>Mosquera, Cundinamarca — Bogotá y Sabana Occidente</span></li>
