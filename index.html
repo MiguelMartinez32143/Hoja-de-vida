@@ -2,7 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- viewport-fit=cover: en teléfonos con muesca o bordes curvos la página
+       usa toda la pantalla, y el CSS aparta el contenido del recorte. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Miguel Esteban Martínez Varón — Aprendiz SENA ADSO</title>
 
   <!-- Esto es lo que se ve cuando el enlace se comparte por WhatsApp o se pega
@@ -44,15 +46,21 @@
         </div>
       </div>
 
-      <div class="hero-avatar reveal delay-2">
-        <img src="foto-perfil.jpg" alt="Fotografía de Miguel Esteban Martínez Varón" class="profile-photo">
-        <ul class="contact-quick">
-          <li><strong>Ubicación</strong> <span>Mosquera, Cundinamarca</span></li>
-          <li><strong>Teléfono</strong> <a href="tel:+573219404978">321 940 4978</a></li>
-          <li><strong>Email</strong> <a href="mailto:miguelmartinezvaron32143@gmail.com">miguelmartinezvaron32143@gmail.com</a></li>
-          <li><strong>GitHub</strong> <a href="https://github.com/MiguelMartinez32143" target="_blank" rel="noopener">MiguelMartinez32143</a></li>
-        </ul>
+      <!-- La foto y el contacto son hermanos del texto, no un bloque aparte:
+           así el CSS los recoloca por pantalla (en el móvil la foto encabeza
+           y el contacto cierra; al imprimir, el contacto ocupa una franja a
+           todo lo ancho) sin cambiar este marcado. -->
+      <div class="hero-media reveal delay-2">
+        <img src="foto-perfil.jpg" alt="Fotografía de Miguel Esteban Martínez Varón"
+             class="profile-photo" width="1200" height="1200" decoding="async">
       </div>
+
+      <ul class="contact-quick reveal delay-3">
+        <li><strong>Ubicación</strong> <span>Mosquera, Cundinamarca</span></li>
+        <li><strong>Teléfono</strong> <a href="tel:+573219404978">321 940 4978</a></li>
+        <li><strong>Email</strong> <a href="mailto:miguelmartinezvaron32143@gmail.com">miguelmartinezvaron32143@<wbr>gmail.com</a></li>
+        <li><strong>GitHub</strong> <a href="https://github.com/MiguelMartinez32143" target="_blank" rel="noopener">MiguelMartinez32143</a></li>
+      </ul>
     </div>
   </header>
 
@@ -219,7 +227,7 @@
         <div class="contact-links reveal delay-1">
           <p>Busco empresa que me patrocine el contrato de aprendizaje. Puede escribirme por cualquiera de estos medios:</p>
           <ul>
-            <li><strong>Email</strong> <a href="mailto:miguelmartinezvaron32143@gmail.com">miguelmartinezvaron32143@gmail.com</a></li>
+            <li><strong>Email</strong> <a href="mailto:miguelmartinezvaron32143@gmail.com">miguelmartinezvaron32143@<wbr>gmail.com</a></li>
             <li><strong>WhatsApp</strong> <a href="https://wa.me/573219404978" target="_blank" rel="noopener">321 940 4978</a></li>
             <li><strong>GitHub</strong> <a href="https://github.com/MiguelMartinez32143" target="_blank" rel="noopener">github.com/MiguelMartinez32143</a></li>
             <li><strong>Ubicación</strong> <span>Mosquera, Cundinamarca — Bogotá y Sabana Occidente</span></li>
