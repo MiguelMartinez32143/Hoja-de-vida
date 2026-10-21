@@ -149,14 +149,48 @@ h3 { font-size: var(--fs-h3); }
 .hero .accent { color: #cfe8ef; }
 
 .subtitle {
+  font-size: clamp(1.02rem, 0.94rem + 0.4vw, 1.22rem);
   font-weight: 500;
-  color: #cfe8ef;
-  margin: 10px 0;
+  color: #e4eef3;
+  margin: 10px 0 0;
 }
 .brief {
   max-width: 52ch;
   color: #e4eef3;
   margin-bottom: 0;
+}
+
+/* Tres cifras sueltas, grandes y escaneables. Una cifra aislada se retiene
+   en una primera lectura de pocos segundos; la misma cifra dentro de un
+   parrafo, no. */
+.hero-stats {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px clamp(20px, 4vw, 38px);
+  margin: 20px 0 0;
+  padding: 0;
+}
+.hero-stats li {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.hero-stats strong {
+  font-size: clamp(1.3rem, 1.08rem + 0.95vw, 1.75rem);
+  font-weight: 700;
+  color: #fff;
+}
+.hero-stats strong.dato-texto {
+  font-size: clamp(1.02rem, 0.95rem + 0.32vw, 1.25rem);
+  align-self: end;
+}
+.hero-stats span {
+  margin-top: 3px;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .eyebrow {
@@ -468,16 +502,20 @@ h3 { font-size: var(--fs-h3); }
 @media (max-width: 860px) {
   .hero-grid {
     grid-template-columns: 1fr;
+    /* El nombre y la prueba van antes que la foto. Puestos al principio,
+       el rostro es lo primero que ancla la impresión, y lo que se quiere
+       anclar es lo que construyó. La foto cierra la cabecera junto a los
+       datos de contacto, como una tarjeta de presentación. */
     grid-template-areas:
-      "media"
       "text"
+      "media"
       "contact";
     row-gap: 18px;
   }
   /* Solo la foto se centra. El texto sigue alineado a la izquierda: seis
      líneas de párrafo centradas obligan al ojo a buscar el inicio de cada
      una, y esto se lee sobre todo en pantallas estrechas. */
-  .hero-media { justify-self: center; }
+  .hero-media { justify-self: center; margin-top: 4px; }
   .hero-text { max-width: 60ch; }
   .contact-quick {
     width: 100%;
@@ -566,6 +604,14 @@ h3 { font-size: var(--fs-h3); }
   .brief { max-width: none; margin: 5px 0 0; color: #000; }
   .eyebrow { margin-bottom: 3px; color: var(--accent-2); }
   .hero-cta, .btn { display: none; }
+  .hero-stats {
+    gap: 2px 16px;
+    margin: 7px 0 0;
+  }
+  .hero-stats li { flex-direction: row; align-items: baseline; gap: 4px; }
+  .hero-stats strong,
+  .hero-stats strong.dato-texto { font-size: 0.95rem; color: #000; }
+  .hero-stats span { margin-top: 0; font-size: 0.66rem; color: #555; }
 
   /* La foto se reduce a una esquina y el contacto ocupa una franja a todo lo
      ancho: en una sola columna estrecha el correo se partía en tres líneas. */
